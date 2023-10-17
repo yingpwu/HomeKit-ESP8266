@@ -3361,7 +3361,7 @@ void homekit_mdns_init(homekit_server_t *server) {
   }
 
   if (homekit_mdns_started) {
-    MDNS.close();
+    // MDNS.close();
     MDNS.begin(name->value.string_value, staIP);
     INFO("MDNS restart: %s, IP: %s", name->value.string_value,
          staIP.toString().c_str());
@@ -3372,9 +3372,9 @@ void homekit_mdns_init(homekit_server_t *server) {
   // homekit_mdns_configure_init(name->value.string_value, PORT);
   //  WiFi.hostname(name->value.string_value);
   //  Must specify the MDNS runs on the IP of STA
-  //  MDNS.begin(name->value.string_value, staIP);
-  //  INFO("MDNS begin: %s, IP: %s", name->value.string_value,
-  //  staIP.toString().c_str());
+  MDNS.begin(name->value.string_value, staIP);
+  INFO("MDNS begin: %s, IP: %s", name->value.string_value,
+       staIP.toString().c_str());
 
   MDNSResponder::hMDNSService mdns_service =
       MDNS.addService(name->value.string_value, HOMEKIT_MDNS_SERVICE,
