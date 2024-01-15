@@ -29,7 +29,7 @@
 #include "watchdog.h"
 
 #define HOMEKIT_SERVER_PORT 5556
-#define HOMEKIT_MAX_CLIENTS 8
+#define HOMEKIT_MAX_CLIENTS 4
 #define HOMEKIT_MDNS_SERVICE "hap"  //"_hap"
 #define HOMEKIT_MDNS_PROTO "tcp"    //"_tcp"
 #define HOMEKIT_EVENT_QUEUE_SIZE 4  // original is 20
